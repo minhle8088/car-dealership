@@ -1,19 +1,22 @@
-<div id="cars-component">
-    <h3>All Cars</h3> 
+<div id="cars-component">    
   <div class="grid grid-pad">
-    <a *ngFor="let car of cars" class="col-1-4">
-      <div class="module car">
-          <div class="badge">{{car.make | uppercase}}</div>
-          <div class="text"><span>Year: </span>{{car.year}}</div>
-          <div class="text"><span>Color: </span>{{car.color}}</div>
-          <div class="text"><span>Price: </span>{{car.price}}</div>
-          <div class="text"><span>Sunroof: </span>{{car.hasSunroof}}</div>
-          <div class="text"><span>Four Wheel Drive: </span>{{car.isFourWheelDrive}}</div>
-          <div class="text"><span>Low Miles: </span>{{car.hasLowMiles}}</div>
-          <div class="text"><span>Power Windows: </span>{{car.hasPowerWindows}}</div>
-          <div class="text"><span>Navigation: </span>{{car.hasNavigation}}</div>
-          <div class="text"><span>Heated Seats: </span>{{car.hasHeatedSeats}}</div>
-      </div>
-    </a>
+    <mat-card *ngFor="let car of cars" class="col-1-4 car-card">
+        <mat-card-header>          
+          <mat-card-title>{{car.year}} {{car.make | uppercase}}</mat-card-title>
+          <mat-card-subtitle>${{car.price}}</mat-card-subtitle>
+        </mat-card-header>        
+        <mat-card-content>
+          <p><span>Color: </span>{{car.color}}</p>
+          <p><span>Sunroof: </span>{{car.hasSunroof ? 'Yes' : 'No'}}</p>
+          <p><span>Four Wheel Drive: </span>{{car.isFourWheelDrive ? 'Yes' : 'No'}}</p>
+          <p><span>Low Mileage: </span>{{car.hasLowMiles ? 'Yes' : 'No'}}</p>
+          <p><span>Power Windows: </span>{{car.hasPowerWindows ? 'Yes' : 'No'}}</p>
+          <p><span>Navigation: </span>{{car.hasNavigation ? 'Yes' : 'No'}}</p>
+          <p><span>Heated Seats: </span>{{car.hasHeatedSeats ? 'Yes' : 'No'}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary">Details</button>          
+        </mat-card-actions>
+      </mat-card>
   </div>  
 </div>

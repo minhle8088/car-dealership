@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { CarSearchComponent } from './components/car-search/car-search.component';
+import { CarMaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,11 @@ import { CarSearchComponent } from './components/car-search/car-search.component
   ],
   imports: [
     BrowserModule,
-    // BrowserAnimationsModule,
-    // MatButtonModule, 
-    // MatCheckboxModule,
+    BrowserAnimationsModule,    
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    CarMaterialModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

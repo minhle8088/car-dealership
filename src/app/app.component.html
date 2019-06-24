@@ -2,9 +2,19 @@
 <div style="text-align:center">
   <h1>{{ title }}</h1>  
 </div>
-<nav>
+<!-- <nav>
   <a routerLink="/cars">All Cars</a>  
   <a routerLink="/car-search">Search Car</a>  
+</nav> -->
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link *ngFor="let tab of tabs"
+    [routerLink]="[tab.path]"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [routerLinkActiveOptions]="{exact: true}">
+    {{ tab.label }}
+  </a>
 </nav>
-<!-- <app-cars></app-cars> -->
+
 <router-outlet></router-outlet>

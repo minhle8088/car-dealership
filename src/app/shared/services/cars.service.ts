@@ -25,7 +25,7 @@ getCars (): Observable<Car[]> {
 }
   
 searchCars(color: string, options: any[]): Observable<Car[]> {        
-  if (!color && !options) {      
+  if ((!color || color.length == 0) && !options) {      
     return of([]);
   }
 

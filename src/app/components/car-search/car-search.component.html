@@ -1,43 +1,53 @@
 <div id="search-component">
-  <h3>Search Car</h3> 
-  
-  <div>
+  <section class="form-section-margin">
     <form #filterCarForm= "ngForm" (ngSubmit)="filterCars(filterCarForm)">
-        <div> Color:
-          <select name="color" id="colorSelect" ngModel>
-            <option value="" disabled>Select a Color</option>
-            <option *ngFor="let color of colors" [ngValue]="color.name">
-              {{ color.name }}
-            </option>
-          </select>
-        </div>            
+        <section class="form-section-margin">           
+          <mat-form-field class="form-elem-margin">
+            <mat-label>Select a color</mat-label>
+            <mat-select [(value)]="selectedColor">  
+              <mat-option value="">None</mat-option>            
+              <mat-option *ngFor="let color of colors" [value]="color.name">
+                  {{ color.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>            
 
-        <label *ngFor="let ch of checkboxes; let i = index">
-            <input type="checkbox" [(ngModel)]="ch.selected" type="checkbox" value={{ch.value}} id={{ch.value}}  name={{ch.value}}>
-            {{ch.name}} 
-        </label>
+        <section class="form-section-margin">
+          <mat-checkbox *ngFor="let ch of checkboxes"            
+            class="form-elem-margin"
+            [labelPosition]="after"
+            [(ngModel)]="ch.selected" value={{ch.value}} id={{ch.value}} name={{ch.value}}>
+            {{ch.name}}
+          </mat-checkbox>
+      </section>
 
-        <div class="btn-submit">
-          <button>Submit</button>    
+      <section class="form-section-margin">
+        <div class="form-elem-margin">
+          <button mat-raised-button color="primary">Search</button>
         </div>
+      </section>  
     </form>
-  </div>  
+  </section>  
 
-  <div class="grid grid-pad">
-    <a *ngFor="let car of cars" class="col-1-4">
-      <div class="module car">
-          <div class="badge">{{car.make | uppercase}}</div>
-          <div class="text"><span>Year: </span>{{car.year}}</div>
-          <div class="text"><span>Color: </span>{{car.color}}</div>
-          <div class="text"><span>Price: </span>{{car.price}}</div>
-          <div class="text"><span>Sunroof: </span>{{car.hasSunroof}}</div>
-          <div class="text"><span>Four Wheel Drive: </span>{{car.isFourWheelDrive}}</div>
-          <div class="text"><span>Low Miles: </span>{{car.hasLowMiles}}</div>
-          <div class="text"><span>Power Windows: </span>{{car.hasPowerWindows}}</div>
-          <div class="text"><span>Navigation: </span>{{car.hasNavigation}}</div>
-          <div class="text"><span>Heated Seats: </span>{{car.hasHeatedSeats}}</div>
-      </div>
-    </a>
-  </div>
-
+  <section class="form-section-margin">
+    <mat-card *ngFor="let car of cars" class="col-1-4 car-card">
+      <mat-card-header>          
+        <mat-card-title>{{car.year}} {{car.make | uppercase}}</mat-card-title>
+        <mat-card-subtitle>${{car.price}}</mat-card-subtitle>
+      </mat-card-header>        
+      <mat-card-content>
+        <p><span>Color: </span>{{car.color}}</p>
+        <p><span>Sunroof: </span>{{car.hasSunroof ? 'Yes' : 'No'}}</p>
+        <p><span>Four Wheel Drive: </span>{{car.isFourWheelDrive ? 'Yes' : 'No'}}</p>
+        <p><span>Low Mileage: </span>{{car.hasLowMiles ? 'Yes' : 'No'}}</p>
+        <p><span>Power Windows: </span>{{car.hasPowerWindows ? 'Yes' : 'No'}}</p>
+        <p><span>Navigation: </span>{{car.hasNavigation ? 'Yes' : 'No'}}</p>
+        <p><span>Heated Seats: </span>{{car.hasHeatedSeats ? 'Yes' : 'No'}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">Details</button>          
+      </mat-card-actions>
+    </mat-card>
+  </section>
 </div>

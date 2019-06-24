@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { Car } from '../../shared/models/Car';
 import { CarsService } from '../../shared/services/cars.service';
 
@@ -21,36 +22,26 @@ export class CarSearchComponent implements OnInit {
 
   checkboxes = [
     {
-      value: 'isFourWheelDrive', 
-      name: 'Four Wheel Drive',
-      selected: false 
+      value: 'isFourWheelDrive', name: 'Four Wheel Drive', selected: false 
     },
     {
-      value: 'hasSunroof',
-      name: 'Sun Roof',
-      selected: false
+      value: 'hasSunroof', name: 'Sun Roof', selected: false
     },
     {
-      value: 'hasNavigation',
-      name: 'Navigation',
-      selected: false
+      value: 'hasNavigation', name: 'Navigation', selected: false
     },
     {
-      value: 'hasLowMiles',
-      name: 'Low Miles',
-      selected: false
+      value: 'hasLowMiles', name: 'Low Miles', selected: false
     },
     {
-      value: 'hasPowerWindows',
-      name: 'Power Windows',
-      selected: false
+      value: 'hasPowerWindows', name: 'Power Windows', selected: false
     },
     {
-      value: 'hasHeatedSeats',
-      name: 'Heated Seats',
-      selected: false
+      value: 'hasHeatedSeats', name: 'Heated Seats', selected: false
     }
-  ]
+  ];
+
+  selectedColor = '';
 
   constructor(private carsService: CarsService) { }
 
@@ -68,9 +59,8 @@ export class CarSearchComponent implements OnInit {
 
   filterCars(filterCarForm: NgForm) {
     let options = this.checkboxes.filter((ch) => { return ch.selected })
-                     .map((ch) => { return { 'name': ch.value, 'value': 'true' } });
-    let color = filterCarForm.controls['color'].value;    
-    this.getCarsAfterFilter(color, options);
+                     .map((ch) => { return { 'name': ch.value, 'value': 'true' } });    
+    this.getCarsAfterFilter(this.selectedColor, options);
   }
 
 }

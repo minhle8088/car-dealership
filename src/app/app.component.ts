@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to Car Dealership';
+  title = 'Welcome to Car Dealership';  
+  tabs = [    
+    { path: 'cars', label: 'All Cars' },
+    { path: 'car-search', label: 'Search Car' }
+  ]
 }
