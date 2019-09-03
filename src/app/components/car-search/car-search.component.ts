@@ -11,6 +11,15 @@ import { CarsService } from '../../shared/services/cars.service';
 })
 export class CarSearchComponent implements OnInit {  
   cars: Car[];
+  makes: string[] = [];
+
+  // colors = [ 
+  //   { name: 'Red' },
+  //   { name: 'White' },
+  //   { name: 'Gray' },
+  //   { name: 'Black' },
+  //   { name: 'Silver' }
+  // ];  
 
   colors = [ 
     { name: 'Red' },
@@ -42,25 +51,46 @@ export class CarSearchComponent implements OnInit {
   ];
 
   selectedColor = '';
+  selectedMake = '';
 
   constructor(private carsService: CarsService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getCars();
+  }
 
   getCars(): void {
     this.carsService.getCars()
-      .subscribe(cars => this.cars = cars);
+      .subscribe(cars => { 
+        this.cars = cars;
+        cars.forEach (car => {
+          if (this.makes.indexOf(car.make) == -1)
+            this.makes.push(car.make);        
+        });
+        console.log(this.cars);
+        console.log(this.makes);
+        this.makes.sort();
+        
+      }
+      );
   }
   
-  getCarsAfterFilter(color: string, options: any[]) {
-    this.carsService.searchCars(color, options)
+  getCarsAfterFilter(make: string, color: string, options: any[]) {
+    this.carsService.searchCars(make, color, options)
       .subscribe(cars => this.cars = cars);
   }
 
   filterCars(filterCarForm: NgForm) {
     let options = this.checkboxes.filter((ch) => { return ch.selected })
                      .map((ch) => { return { 'name': ch.value, 'value': 'true' } });    
-    this.getCarsAfterFilter(this.selectedColor, options);
+    this.getCarsAfterFilter(this.selectedMake, this.selectedColor, options);
+  }
+
+  getMakes(): void {    
+    // this.getCars();
+    this.cars.forEach (car => {
+      this.makes.push(car.make);        
+    });
   }
 
 }

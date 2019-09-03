@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'Welcome to Car Dealership';  
   tabs = [    
     { path: 'cars', label: 'All Cars' },
-    { path: 'car-search', label: 'Search Car' }
+    { path: 'car-search', label: 'Search Car' }, 
+    { path: 'light-switch', label: 'Light Switch' }
   ]
 }

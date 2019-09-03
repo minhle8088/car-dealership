@@ -1,0 +1,16 @@
+<mat-card class="light">
+  <mat-card-content>
+    <section class="light-section">
+      <mat-slide-toggle
+          class="light-margin"          
+          color="primary"
+          [checked]="checked"          
+          (change)="switchLight()">
+      </mat-slide-toggle>
+    </section>
+    <section class="light-status">
+      <img [src]="checked ? 'assets/images/light-bulb-on.jpg' : 'assets/images/light-bulb-off.jpg'"> 
+    </section>
+  </mat-card-content>
+</mat-card>
+

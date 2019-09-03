@@ -24,12 +24,13 @@ getCars (): Observable<Car[]> {
     );
 }
   
-searchCars(color: string, options: any[]): Observable<Car[]> {        
-  if ((!color || color.length == 0) && !options) {      
+searchCars(make: string, color: string, options: any[]): Observable<Car[]> {        
+  if (((!make || !make.length) && !color || color.length == 0) && !options) {      
     return of([]);
   }
 
   let params = new HttpParams();
+  params = params.append('make', make);
   params = params.append('color', color);
 
   for (var i = 0; i < options.length; i++) {
@@ -63,4 +64,8 @@ searchCars(color: string, options: any[]): Observable<Car[]> {
   private log(message: string) {
     console.log(message);
   }
+
+  // genId(cars: Car[]): string {
+  //   return cars.length > 0 ? (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1) : '1';
+  // }
 }

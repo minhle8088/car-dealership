@@ -12,12 +12,16 @@ import { AppComponent } from './app.component';
 import { CarsComponent } from './components/cars/cars.component';
 import { CarSearchComponent } from './components/car-search/car-search.component';
 import { CarMaterialModule } from './material.module';
+import { SortByPipe } from './shared/pipes/sortOrder.pipe';
+import { LightSwitchComponent } from './components/light-switch/light-switch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsComponent,
-    CarSearchComponent
+    CarSearchComponent,
+    SortByPipe,
+    LightSwitchComponent
   ],
   imports: [
     BrowserModule,

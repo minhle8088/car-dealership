@@ -1,6 +1,19 @@
 <div id="search-component">
   <section class="form-section-margin">
     <form #filterCarForm= "ngForm" (ngSubmit)="filterCars(filterCarForm)">
+
+        <section class="form-section-margin">           
+          <mat-form-field class="form-elem-margin">
+            <mat-label>Select a make</mat-label>
+            <mat-select [(value)]="selectedMake">  
+              <mat-option value="">None</mat-option>            
+              <mat-option *ngFor="let make of makes" [value]="make">
+                  {{ make }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>            
+
         <section class="form-section-margin">           
           <mat-form-field class="form-elem-margin">
             <mat-label>Select a color</mat-label>
@@ -34,7 +47,7 @@
     <mat-card *ngFor="let car of cars" class="col-1-4 car-card">
       <mat-card-header>          
         <mat-card-title>{{car.year}} {{car.make | uppercase}}</mat-card-title>
-        <mat-card-subtitle>${{car.price}}</mat-card-subtitle>
+        <mat-card-subtitle>{{car.price | currency }}</mat-card-subtitle>
       </mat-card-header>        
       <mat-card-content>
         <p><span>Color: </span>{{car.color}}</p>

@@ -1,0 +1,14 @@
+.light-h2 {
+    margin: 10px;
+}
+
+.light-section {
+display: flex;
+align-content: center;
+align-items: center;
+height: 60px;
+}
+
+.light-margin {
+margin: 10px;
+}

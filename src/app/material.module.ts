@@ -4,6 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   exports: [    
@@ -11,7 +12,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatCardModule,
     MatCheckboxModule,    
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSlideToggleModule
   ]
 })
 export class CarMaterialModule {}

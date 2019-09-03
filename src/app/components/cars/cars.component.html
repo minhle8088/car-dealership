@@ -3,7 +3,7 @@
     <mat-card *ngFor="let car of cars" class="col-1-4 car-card">
         <mat-card-header>          
           <mat-card-title>{{car.year}} {{car.make | uppercase}}</mat-card-title>
-          <mat-card-subtitle>${{car.price}}</mat-card-subtitle>
+          <mat-card-subtitle>{{car.price | currency}}</mat-card-subtitle>
         </mat-card-header>        
         <mat-card-content>
           <p><span>Color: </span>{{car.color}}</p>
