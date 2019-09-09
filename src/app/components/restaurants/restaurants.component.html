@@ -1,6 +1,13 @@
 <div id="restaurants-component">
-  <mat-nav-list class="container">
-      <a *ngFor="let restaurant of restaurants" mat-list-item [routerLink]="['/restaurant-detail/', restaurant.id]">
+  <mat-nav-list class="container"  
+  fxLayout="row wrap" 
+  fxLayout.lt-sm="column"   
+  fxLayoutAlign="space-around">
+      <a *ngFor="let restaurant of restaurants" 
+        fxFlex="0 1 calc(20%)"
+        fxFlex.lt-md="0 1 calc(20%)"
+        fxFlex.lt-sm="100%"
+        mat-list-item [routerLink]="['/restaurant-detail/', restaurant.id]">
           <mat-card class="restaurant-card">
             <mat-card-title-group>
                 <img src="{{restaurant.backgroundImageURL}}" alt="{{restaurant.name | uppercase}}">

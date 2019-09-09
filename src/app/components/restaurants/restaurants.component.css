@@ -3,6 +3,9 @@
     height: 180px;
     padding: 0;
 }
+@media only screen and (min-width: 768px) {
+    .container .mat-list-item { height: 90px; }
+}
 :host /deep/ .mat-list-item-content {
     padding: 0!important;
   }
