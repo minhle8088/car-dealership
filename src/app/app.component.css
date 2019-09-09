@@ -8,3 +8,23 @@ h2 {
   margin-top: 0;
   padding-top: 0;
 } 
+.app-title {    
+  background-color: #43E895;
+  width: 100%;
+  text-align: center;    
+  line-height: 80px;
+  font-size: 17px;
+  color: white;
+  font-family: 'next-demi-bold';
+}
+.back-btn {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background-color: transparent;
+  background-repeat: no-repeat;    
+  background-position: center center;
+  background-image: url(/assets/images/ic_webBack@2x.png);
+}

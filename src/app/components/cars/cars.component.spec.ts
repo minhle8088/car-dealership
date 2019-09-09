@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { CarMaterialModule } from '../../material.module';
+import { PrjMaterialModule } from '../../material.module';
 
 import { CarsComponent } from './cars.component';
 import { CarsService } from '../../shared/services/cars.service';
@@ -16,7 +16,7 @@ describe('CarsComponent', () => {
       declarations: [ CarsComponent ],
       imports: [
         HttpClientTestingModule,
-        CarMaterialModule
+        PrjMaterialModule
       ],
       providers: [CarsService]
     })

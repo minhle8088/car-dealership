@@ -1,0 +1,33 @@
+agm-map { height: 180px; }
+.mat-card { padding: 0; box-shadow: none; }
+.mat-card-content { margin-bottom: 0; }
+.mat-card-title-group {    
+    background-color: #34B379;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+.mat-card-title {    
+    font-size: 16px;
+    color: white;
+    font-family: 'next-demi-bold';
+    margin-bottom: 6px;
+}
+.mat-card-subtitle {    
+    font-size: 12px;
+    color: white;
+    font-family: 'next-regular';
+    margin-bottom: 0;
+}
+.mat-card-content {
+    font-size: 16px;
+    color: #2A2A2A;
+    font-family: 'next-regular';
+}
+.mat-card-content .address, .mat-card-content .phone, .mat-card-content .social { padding: 6px 12px; }
+.mat-card-content .address, .mat-card-content .phone { margin-bottom: 26px; }
+@media only screen and (min-width: 768px) {
+    .mat-card-content .address, .mat-card-content .phone { margin-bottom: 12px; }
+} 
+

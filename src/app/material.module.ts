@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSelectModule} from '@angular/material/select';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatSelectModule,
+  MatTabsModule,
+  MatSlideToggleModule,
+  MatListModule,
+  MatIconModule
+} from '@angular/material';
 
 @NgModule({
   exports: [    
@@ -13,7 +17,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatCheckboxModule,    
     MatSelectModule,
     MatTabsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatListModule,
+    MatIconModule
   ]
 })
-export class CarMaterialModule {}
+export class PrjMaterialModule {}

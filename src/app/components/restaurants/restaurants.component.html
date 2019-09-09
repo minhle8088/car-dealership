@@ -1,0 +1,13 @@
+<div id="restaurants-component">
+  <mat-nav-list class="container">
+      <a *ngFor="let restaurant of restaurants" mat-list-item [routerLink]="['/restaurant-detail/', restaurant.id]">
+          <mat-card class="restaurant-card">
+            <mat-card-title-group>
+                <img src="{{restaurant.backgroundImageURL}}" alt="{{restaurant.name | uppercase}}">
+                <mat-card-title>{{restaurant.name | uppercase}}</mat-card-title>
+                <mat-card-subtitle>{{restaurant.category}}</mat-card-subtitle>
+            </mat-card-title-group>
+          </mat-card>
+      </a>
+    </mat-nav-list>
+</div>

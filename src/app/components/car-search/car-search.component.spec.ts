@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { FormsModule }   from '@angular/forms';
-import { CarMaterialModule } from '../../material.module';
+import { PrjMaterialModule } from '../../material.module';
 
 import { CarSearchComponent } from './car-search.component';
 import { CarsService } from '../../shared/services/cars.service';
@@ -26,7 +26,7 @@ describe('CarSearchComponent', () => {
         BrowserAnimationsModule,
         HttpClientTestingModule,
         FormsModule, 
-        CarMaterialModule
+        PrjMaterialModule
       ],
       providers: [CarsService]
     })

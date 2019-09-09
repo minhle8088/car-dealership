@@ -1,13 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>{{ title }}</h1>  
-</div>
-<!-- <nav>
-  <a routerLink="/cars">All Cars</a>  
-  <a routerLink="/car-search">Search Car</a>  
-</nav> -->
+</div> -->
 
-<nav mat-tab-nav-bar>
+<!-- <nav mat-tab-nav-bar>
   <a mat-tab-link *ngFor="let tab of tabs"
     [routerLink]="[tab.path]"
     routerLinkActive
@@ -15,6 +11,13 @@
     [routerLinkActiveOptions]="{exact: true}">
     {{ tab.label }}
   </a>
-</nav>
+</nav> -->
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<div class="app-title">
+  <button *ngIf="visible" mat-flat-button class="back-btn" (click)="goBack()"></button>    
+  Lunch Tyme
+</div>
+<div [@routeAnimation]="prepareRoute(outlet)" >
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

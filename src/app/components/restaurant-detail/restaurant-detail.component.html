@@ -1,0 +1,30 @@
+<div id="restaurant-detail-component" *ngIf="restaurant">          
+    <mat-card class="restaurant-card" 
+    fxLayout="row" 
+    fxLayout.xs="column" 
+    fxFlexFill>
+      <mat-card-content fxFlex="50" fxFlex.xs="100">
+        <!-- this creates a google map on the page with the given lat/lng from -->
+        <!-- the component as the initial center of the map: -->
+        <agm-map [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng" [zoom]="15">
+          <agm-marker [latitude]="restaurant.location.lat" [longitude]="restaurant.location.lng"></agm-marker>
+        </agm-map>
+      </mat-card-content>      
+      <mat-card-content fxFlex="50" fxFlex.xs="100">          
+        <mat-card-title-group>          
+            <mat-card-title>{{restaurant.name | uppercase}}</mat-card-title>
+            <mat-card-subtitle>{{restaurant.category}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <div class="address">
+          <span>{{restaurant.location.address}}</span>
+          <span>{{restaurant.location.city}}, {{restaurant.location.state}} {{restaurant.location.postalCode}}</span>
+        </div>  
+        <div class="phone" *ngIf="restaurant.contact && restaurant.contact.formattedPhone">
+          <span>{{restaurant.contact.formattedPhone}}</span>
+        </div>          
+        <div class="social" *ngIf="restaurant.contact && restaurant.contact.twitter">
+            <span>@{{restaurant.contact.twitter}}</span> 
+        </div>          
+    </mat-card-content>      
+  </mat-card>
+</div>

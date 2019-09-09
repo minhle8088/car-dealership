@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+@font-face {
+    font-family: 'next-demi-bold';
+    font-weight: bold;
+    font-style: normal;
+    src: url(assets/fonts/AvenirNext-DemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'next-regular';
+    font-weight: bold;
+    font-style: normal;
+    src: url(assets/fonts/AvenirNext-Regular.ttf);
+}
+
 [class*='col-'] {
     float: left;
     padding-right: 20px;
