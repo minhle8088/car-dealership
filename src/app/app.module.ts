@@ -44,7 +44,7 @@ import { RestaurantDetailComponent } from './components/restaurant-detail/restau
       InMemoryDataService, { dataEncapsulation: false }
     ),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA6VtFpTG8FqFzTbtAW7sIGQP_uaWqyU3U'
+      apiKey: ''
     })
   ],
   providers: [],
